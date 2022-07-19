@@ -10,8 +10,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'container',  // not used when we are creating a host module but is added as a convention
       remotes: {
-        products: 'products@http://localhost:8081/remoteEntry.js', // the products string before the at has to be identical
-                                                                   // to the name in the name of the products MF plugin
+        products: 'products@http://localhost:8081/remoteEntry.js', // the products string before the @ has to be identical
+                                                                   // to the name in the "name" of the products MF plugin
         cart: 'cart@http://localhost:8082/remoteEntry.js'
       }
     }),

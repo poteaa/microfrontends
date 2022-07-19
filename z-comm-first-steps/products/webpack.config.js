@@ -13,7 +13,7 @@ module.exports = {
       filename: 'remoteEntry.js', // this is a recommended name
       exposes: {
         './ProductsIndex': './src/bootstrap'  // aliasses filenames => we are exposing the modules ProductsIndex and if
-                                          // anyone tries to import product index we are to give them src/index
+                                              // anyone tries to import ProductIndex we are giving them src/bootstrap
       },
       shared: ['faker']
     }),

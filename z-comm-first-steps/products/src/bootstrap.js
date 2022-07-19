@@ -2,7 +2,7 @@ import faker from 'faker';
 
 
 const mount = (el) => {
-  console.log('Mountng products');
+  console.log('Mounting products');
   let products = '';
 
   for (let i = 0; i < 5; i++) {

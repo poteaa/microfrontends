@@ -13,9 +13,10 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
+      name: 'container',  // not used when we are creating a host module but is added as a convention
       remotes: {
-        marketing: 'marketing@http://localhost:8081/remoteEntry.js'
+        marketing: 'marketing@http://localhost:8081/remoteEntry.js' // the marketing string before the @ has to be identical
+                                                                    // to the name in the "name" of the marketing MF plugin
       },
       shared: packageJson.dependencies,
     }),
