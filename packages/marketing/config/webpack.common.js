@@ -1,3 +1,5 @@
+// We can have multiple webpack.env.js file to configure every env. This is the common webpack file
+// that will be merged with the others depending on the environment that we are running on package.json scripts
 module.exports = {
   module: {
     // Loaders: tell webpack to process some different files as we
@@ -10,9 +12,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            // -react: bable is going to process all jsx tags, -env: transform our code to ES6
+            // preset-react: bable is going to process all jsx tags, preset-env: transform our code to ES5
             presets: ['@babel/preset-react', '@babel/preset-env'],
-            // Add additional code to enabie features like async await
+            // Add additional code to enable features sucha as async await
             plugins: ['@babel/plugin-transform-runtime'],
           }
         }

@@ -7,7 +7,7 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name][contenthash].js',
-    publicPath: '/marketing/latest/'
+    publicPath: '/marketing/latest/' // this is used to add the path generated in S3
   },
   plugins: [
     new ModuleFederationPlugin({
