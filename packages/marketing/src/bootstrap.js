@@ -4,8 +4,13 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 import App from './App';
 
 // Mount function to start up the app
-const mount = (el, { onNavigate, defaultHistory }) => {
-  const history = defaultHistory || createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+  const history = defaultHistory || createMemoryHistory({
+    // This is important since the memoryrouter initiates on / and requires a history event
+    // to refresh the url so we have to click twice to achieve that, with this we provide
+    // an initial path
+    initialEntries: [initialPath]
+  });
 
   if (onNavigate) {
     history.listen(onNavigate);

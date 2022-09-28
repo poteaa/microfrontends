@@ -9,6 +9,7 @@ export default () => {
   useEffect(() => {
     // ref.current has the reference to the HTML element
     const { onParentNavigate } = mount(ref.current, {
+      initialPath: history.location.pathname,
       // location argument is provided when the history.listen calls the callback
       // function, this location object has a pathname property, we are usign an alias
       onNavigate: ({pathname: nextPathname}) => {

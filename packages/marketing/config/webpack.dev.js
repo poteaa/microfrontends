@@ -6,6 +6,12 @@ const packageJson = require('../package.json');
 
 const devConfig = {
   mode: 'development',
+  output: {
+     // For this project it is not necessary to add the publicPath since it tries to find the main.js
+     // in the path where we got the remoteEntry.js, for the auth project it is necessary since we are
+     // trying to access signin and signout routes
+    publicPath: 'http://localhost:8081/'  
+  },
   devServer: {
     port: 8081,
     historyApiFallback: {
@@ -17,7 +23,7 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: 'marketing',  // this name is used in the host when adding this remote
       filename: 'remoteEntry.js',  // this is a recommended name
-      exposes: {
+      exposes: {  // allows to share a component, a page or an entire application
         './MarketingApp': './src/bootstrap',  // aliasses:files => we are exposing the modules MarketingApp and if
                                               // anyone tries to import MarketingApp we are giving them src/bootstrap
       },
