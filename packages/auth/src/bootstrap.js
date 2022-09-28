@@ -30,7 +30,7 @@ const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
 
 if (process.env.NODE_ENV === 'development') {
   console.log('Auth in development mode');
-  const devRoot = document.querySelector('#auth-dev-root');
+  const devRoot = document.querySelector('#_auth-dev-root');
 
   if (devRoot) {
     console.log('Auth mounted locally');
