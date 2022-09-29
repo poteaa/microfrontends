@@ -7,9 +7,10 @@ const packageJson = require('../package.json');
 const devConfig = {
   mode: 'development',
   output: {
+    // This option specifies the public URL of the output directory when referenced in a browser.
      // For this project it is not necessary to add the publicPath since it tries to find the main.js
      // in the path where we got the remoteEntry.js, for the auth project it is necessary since we are
-     // trying to access signin and signout routes
+     // trying to access signin and signout routes.  
     publicPath: 'http://localhost:8081/'  
   },
   devServer: {
