@@ -23,7 +23,8 @@ const devConfig = {
     // Exposing the files, the remoteEntry.js lists different modules that can be loaded form the Markeging project
     new ModuleFederationPlugin({
       name: 'marketing',  // this name is used in the host when adding this remote
-      filename: 'remoteEntry.js',  // this is a recommended name
+      filename: 'remoteEntry.js',  // this is a recommended name, contains a list of files that are available
+                                   // from this project  + directions on how to load them
       exposes: {  // allows to share a component, a page or an entire application
         './MarketingApp': './src/bootstrap',  // aliasses:files => we are exposing the modules MarketingApp and if
                                               // anyone tries to import MarketingApp we are giving them src/bootstrap
