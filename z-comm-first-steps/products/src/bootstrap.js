@@ -18,7 +18,7 @@ const mount = (el) => {
 // We are using our local index.html file
 // Which DEFINITELY has an element with an id of 'dev-products'
 // We want to immediately render our app into that element
-if (process.env.NODE_ENV === 'development') { // since we added mode: 'development', then webpack
+if (process.env.NODE_ENV === 'development') { // since we added mode: 'development' in webpack.config, webpack
                                               // will replace the value of process.env.NODE_ENV for development
   const el = document.querySelector('#dev-products');
 
